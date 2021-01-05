@@ -1,4 +1,8 @@
 body{    
-    background: linear-gradient(135deg,#172a74,#21a9af);
-    min-height: 100vh
+    background: linear-gradient(45deg, #e9ffec, #cbe2fb);
+    min-height: 100vh;
+}
+
+*{
+    font-family: 'Saira Condensed', cursive;
 }
