@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import {Button} from 'react-bootstrap';
 import Menu from './Menu';
+import Logo from './Logo';
 //import styles from './checkthis.module.css';
 
 export default function Top(){
@@ -12,17 +13,23 @@ export default function Top(){
     ];
     return(
             <div className='top'>
-                <Menu 
-                    articleMenuItems= {articleMenuItems}
-                />
+                <div className='menuTop'> 
+                    <Menu 
+                        articleMenuItems= {articleMenuItems}
+                    />
+                </div>
+                <Logo />
             <style jsx>
                 {`
+                    .menuTop{
+                        margin-left: 2px
+                    }
                     .top{
                         height : 20%;
-                        width : 80%;
                         // background-color: yellow;
                         display: flex;
-                        flex-direction: row;
+                        flex-direction: row-reverse;
+                        justify-content: space-between;
                     }
                 `}
             </style>

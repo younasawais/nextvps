@@ -7,11 +7,15 @@ export default function Logo(){
                     <div className="navbar-brand">
                         <a href="/">
                             <h2 className='logoName'>
-                                The Javadeveloper</h2>
+                                THE JAVA DEVELOPER</h2>
                         </a>
                     </div>
                 </div>
                 <style jsx>{`
+                    h2{
+                        font-size: 1.1rem;
+                        text-shadow: 3px 3px 5px #7183b5;
+                    }
                     a:hover{
                         text-decoration: none;
                     }
@@ -21,7 +25,7 @@ export default function Logo(){
                     }
 
                     .logoName{
-                        font-family: 'Squada One';
+                        font-family: 'Audiowide';
                         color: #2e7880
                     }
                 `}</style>

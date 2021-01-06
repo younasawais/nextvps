@@ -10,8 +10,8 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-            {/* <link href="/fonts/style.css" rel="stylesheet"/>
-            <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee+Outline&display=swap" rel="stylesheet"/> */}
+            {/* <link href="/fonts/style.css" rel="stylesheet"/>*/}
+            <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee+Outline&display=swap" rel="stylesheet"/> 
             <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed&display=swap" rel="stylesheet"/>
         </Head>
         <body>
