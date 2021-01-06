@@ -3,12 +3,16 @@ import {Button} from 'react-bootstrap';
 
 export default function Algo(){
     const [input, setInput] = useState('');
-    const [btnNames, setBtnNames] = useState(
+    const [btnNames] = useState(
         [
-            {name:'Capitelize all word', id:'capitalize'},
-            {name:'Upper case all Charachters', id:'uppercase'},
-            {name:'Lower case all Charachters', id:'lowercase'},
+            {name:'Reverse letters of every words', id:'reverseword'},
+            {name:'Reverse words in text', id:'reverseword'},
+            {name:'Capitelize all words', id:'capitalize'},
+            {name:'Upper case all Letters', id:'uppercase'},
+            {name:'Lower case all Letters', id:'lowercase'},
             {name:'Alternate case', id:'alternate'},
+            {name:'Shuffle all Words', id:'shufflewords'},
+            {name:'Shuffle all Letters', id:'shufflechars'},
         ])
 
     function handleTextInput(e){
@@ -26,32 +30,43 @@ export default function Algo(){
     return(
         <Fragment className='center'>
             <div className='text'>
-                <h1 className='title'>Revert Text Charachter</h1>
-                <p className='infoText'>Paste your text below and press "Reverse Text" button.</p>
+            <h1 className='title'>Reverse text</h1>
+            <p className='welcomeP'> Welcome to javadeveloper.com!</p>
+            <p> Do you need to fix your text? Accidentally left you CAPSLOCK on? Or copied content 
+                from pdf file which has some crazy format? We have tools in place to resolve all these issues. 
+                Feel free to contact us if you need any specific tools which we can develope specially for you! </p>
+                <p className='infoText'>Below tool will reverse all charachters of the text. Paste your text in the textbox and press "Reverse Text" button.</p>
             </div>
             <textarea 
                 className="form-control" 
                 onChange={handleTextInput}
-                placeholder='Enter your text here and press "Reverse Text" button below' 
+                placeholder='Enter your text here..' 
                 id="text" 
                 value={input}
                 name="text" 
                 rows="10"/>
             <div className='submitBtn'>
-                <Button variant="info" onClick={handleBtn}>Reverse Text</Button>
+                <div className='mainBtn'>
+                    <Button variant="info" onClick={handleBtn}>Reverse Text, other tsull ensoo</Button>
+                </div>
                 <div className='buttonFamily'>
                     {
-                        btnNames.map((btn)=>{return(
+                        btnNames.map((btn, index)=>{return(
                             <div className='secondBtn'>
-                            <Button variant="outline-info" id={btn.id}>{btn.name}</Button>
+                                <Button variant="outline-info" key={index} name={btn.id}>{btn.name}</Button>
                             </div>
                         )})
                     }
                 </div>
             </div>
+            <p className="footer"> Copyright ©2020-2021 - TheJavaDeveloper.com </p>
             <style jsx>{`
+                .mainBtn{
+                    width: 10rem;
+                }
                 .secondBtn{
-                    margin-left: 2px
+                    margin-left: 2px;
+                    margin-bottom: 1px
                 }
                 .infoText{    
                     margin-top: 0;
@@ -69,7 +84,6 @@ export default function Algo(){
                 }
                 .text{
                     height : 20%;
-                    width : 80%;
                     // background-color: green
                 }
                 .submitBtn{
@@ -80,6 +94,14 @@ export default function Algo(){
                     display: flex;
                     flex-wrap: wrap;
                     margin-left: 2px;
+                }
+                .welcomeP{
+                    margin-top: 2rem;
+                    font-weight: bold;
+                }
+                .footer{
+                    text-align: center;
+                    margin-top: 2rem;
                 }
             `}</style>
         </Fragment>

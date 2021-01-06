@@ -1,5 +1,5 @@
 import { Nav, Navbar } from 'react-bootstrap';
-import Logo from './Logo.js';
+//import Logo from './Logo.js';
 import styling from './menu.module.css';
 import { Fragment } from 'react';
 
@@ -12,8 +12,8 @@ export default function Menu({articleMenuItems}) {
                 <Navbar.Collapse id="basic-navbar-nav" >
                     <div className="test">
                         <Nav className="mr-auto" style={{flexWrap: 'wrap'}} >
-                            {articleMenuItems.map( ({name, router}) => { return(
-                                <Nav.Link href={"/article/" + router}>{name}</Nav.Link>                            
+                            {articleMenuItems.map( ({name, router}, index) => { return(
+                                <Nav.Link key={index} href={"/algo/" + router}>{name}</Nav.Link>                            
                             )})}
                             {/* <Nav.Link href="/">Home</Nav.Link>
                             <Nav.Link href="/dummy">Dummy</Nav.Link> */}
