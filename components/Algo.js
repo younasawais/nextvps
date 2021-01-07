@@ -15,11 +15,12 @@ export default function Algo(){
             {name:'Shuffle all Letters', id:'shufflechars'},
         ])
 
-    function handleTextInput(e){
+    function handleTextInput(){
         setInput(e.target.value);
     }
 
-    function handleBtn(){
+    function handleBtn(e){
+        console.log(e.target.id);
         let str = "";
         for(let i = input.length -1; i >= 0 ; i--){
             str = str + input[i];
@@ -28,32 +29,32 @@ export default function Algo(){
     }
 
     return(
-        <Fragment className='center'>
+        <Fragment>
             <div className='text'>
             <h1 className='title'>Reverse text</h1>
-            <p className='welcomeP'> Welcome to javadeveloper.com!</p>
+            <p className='welcomeP'> Welcome to TheJavaDeveloper.com!</p>
             <p> Do you need to fix your text? Accidentally left you CAPSLOCK on? Or copied content 
                 from pdf file which has some crazy format? We have tools in place to resolve all these issues. 
                 Feel free to contact us if you need any specific tools which we can develope specially for you! </p>
                 <p className='infoText'>Below tool will reverse all charachters of the text. Paste your text in the textbox and press "Reverse Text" button.</p>
             </div>
-            <textarea 
+            <textarea
                 className="form-control" 
                 onChange={handleTextInput}
-                placeholder='Enter your text here..' 
-                id="text" 
+                placeholder='Enter your text here..'
+                id="text"
                 value={input}
-                name="text" 
+                name="text"
                 rows="10"/>
             <div className='submitBtn'>
                 <div className='mainBtn'>
-                    <Button variant="info" onClick={handleBtn}>Reverse Text, other tsull ensoo</Button>
+                    <Button variant="info" id='test' onClick={handleBtn}>Reverse Text</Button>
                 </div>
                 <div className='buttonFamily'>
                     {
                         btnNames.map((btn, index)=>{return(
                             <div className='secondBtn'>
-                                <Button variant="outline-info" key={index} name={btn.id}>{btn.name}</Button>
+                                <Button variant="outline-info" onClick={handleBtn} key={index} id={btn.id}>{btn.name}</Button>
                             </div>
                         )})
                     }
@@ -68,7 +69,7 @@ export default function Algo(){
                     margin-left: 2px;
                     margin-bottom: 1px
                 }
-                .infoText{    
+                .infoText{
                     margin-top: 0;
                     margin-bottom: 1rem;
                     font-size: 1.25rem;
