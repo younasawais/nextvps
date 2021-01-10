@@ -80,6 +80,8 @@ export default function Algo({algoDetails, family, extraFamily}){
             <div className='text'>
                 <h1 className='title'>{algoDetails.name}</h1>
                 <p className='welcomeP'> Welcome to TheJavaDeveloper.com!</p>
+                <p>Do you need to fix your text? Accidentally left you CAPSLOCK on? Or copied content from pdf file which has some crazy format? We have tools in place to resolve many of these issues! Feel free to contact us if you need any specific tools which we can develope specially for you!</p>
+                <hr/>
                 <p> {algoDetails.descriptionLong} </p>
                 <p className='infoText'>{algoDetails.descriptionShort}</p>
             </div>
