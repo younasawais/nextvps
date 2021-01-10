@@ -1,23 +1,8 @@
 import {Fragment, useState} from 'react';
 import {Button} from 'react-bootstrap';
 
-export default function Algo(){
+export default function Algo({algoDetails, family, extraFamily}){
     const [input, setInput] = useState('');
-    const [btnNamesMain] = useState(
-        [
-            {name:'Title case', id:'capitalize'},
-            {name:'Upper Case', id:'uppercase'},
-            {name:'Lower Case', id:'lowercase'},
-            {name:'Alternate cases', id:'alternate'},
-            {name:'Toggle cases', id:'toggle'}
-        ]);
-    const [btnNamesExtra] = useState(
-        [
-            {name:'Reverse letters of every word', id:'reverseword'},
-            {name:'Reverse words in text', id:'reverseword'},
-            {name:'Shuffle all Words', id:'shufflewords'},
-            {name:'Shuffle all Letters', id:'shufflechars'}
-        ]);
 
     function handleTextInput(e){
         setInput(e.target.value);
@@ -25,16 +10,11 @@ export default function Algo(){
     
 
     function handleBtn(e){  
+        
         switch(e.target.id){
-            case 'reverseText':
-                let str = "";
-                for(let i = input.length -1; i >= 0 ; i--){
-                    str = str + input[i]
-                }
-                setInput(str);
-                break;
-            case 'capitalize':
+            case 'title-case':
                 let capital = input.split(' ');
+                console.log('capital : ' + capital);
                 for(let i = 0; i < capital.length ; i++){
                     let word = capital[i].split('');
                     word[0] = word[0].toUpperCase();
@@ -43,7 +23,7 @@ export default function Algo(){
                 capital = capital.join(' ');
                 setInput(capital);
                 break;
-            case 'uppercase' :
+            case 'upper-case' :
                 let upper = input.split('');
                 for (let i = 0; i < upper.length; i++) {
                     upper[i] = upper[i].toUpperCase();
@@ -51,7 +31,7 @@ export default function Algo(){
                 upper = upper.join('');
                 setInput(upper);
                 break;
-            case 'lowercase' :
+            case 'lower-case' :
                 let lower = input.split('');
                 for (let i = 0; i < lower.length; i++) {
                     lower[i] = lower[i].toLocaleLowerCase();
@@ -59,7 +39,7 @@ export default function Algo(){
                 lower = lower.join('');
                 setInput(lower);
                 break;
-            case 'alternate' :
+            case 'alternate-case' :
                 let alternate = input.split('');
                 for (let i = 0; i < alternate.length; i++) {
                     if(i%2){
@@ -71,7 +51,7 @@ export default function Algo(){
                 alternate = alternate.join('');
                 setInput(alternate);
                 break;
-            case 'toggle' :
+            case 'toggle-case' :
                 let toggle = input.split('');
                 for (let i = 0; i < toggle.length; i++) {
                     if(toggle[i] === toggle[i].toLowerCase()){
@@ -83,6 +63,13 @@ export default function Algo(){
                 toggle = toggle.join('');
                 setInput(toggle);
                 break;
+            case 'reverse-characters':
+                let str = "";
+                for(let i = input.length -1; i >= 0 ; i--){
+                    str = str + input[i]
+                }
+                setInput(str);
+                break;
             default:
                 break;
         }
@@ -91,12 +78,10 @@ export default function Algo(){
     return(        
         <Fragment>
             <div className='text'>
-                <h1 className='title'>Reverse text</h1>
+                <h1 className='title'>{algoDetails.name}</h1>
                 <p className='welcomeP'> Welcome to TheJavaDeveloper.com!</p>
-                <p> Do you need to fix your text? Accidentally left you CAPSLOCK on? Or copied content 
-                from pdf file which has some crazy format? We have tools in place to resolve all these issues. 
-                Feel free to contact us if you need any specific tools which we can develope specially for you! </p>
-                <p className='infoText'>Below tool will reverse all charachters of the text. Paste your text in the textbox and press "Reverse Text" button.</p>
+                <p> {algoDetails.descriptionLong} </p>
+                <p className='infoText'>{algoDetails.descriptionShort}</p>
             </div>
             <textarea
                 className="form-control" 
@@ -108,24 +93,35 @@ export default function Algo(){
                 rows="10"/>
             <div className='submitBtn'>
                 <div className='mainBtn'>
-                    <Button variant="info" id='reverseText' onClick={handleBtn}>Reverse Text</Button>
+                    <Button 
+                        variant="info" 
+                        id={algoDetails.link} 
+                        onClick={handleBtn}>{algoDetails.name}
+                    </Button>
                 </div>
                 <div className='extraButtons'>
                 <div className='buttonFamily'>
                     {
-                        btnNamesMain.map((btn, index)=>{return(
+                        family.map((btn, index)=>{return(
                             <div className='secondBtn' key={index}>
-                                <Button variant="outline-info" onClick={handleBtn} id={btn.id}>{btn.name}</Button>
+                                <Button 
+                                    variant="outline-info" 
+                                    onClick={handleBtn} 
+                                    id={btn.link}>{btn.name}
+                                </Button>
                             </div>
                         )})
                     }
                 </div>
-                {/* <hr/> */}
                 <div className='buttonFamily'>
                     {
-                        btnNamesExtra.map((btn, index)=>{return(
+                        extraFamily.map((btn, index)=>{return(
                             <div className='secondBtn' key={index}>
-                                <Button variant="outline-secondary" onClick={handleBtn} id={btn.id}>{btn.name}</Button>
+                                <Button 
+                                    variant="outline-secondary" 
+                                    onClick={handleBtn} 
+                                    id={btn.link}>{btn.name}
+                                </Button>
                             </div>
                         )})
                     }

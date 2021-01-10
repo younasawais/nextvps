@@ -4,7 +4,7 @@ import Menu from './Menu';
 import Logo from './Logo';
 //import styles from './checkthis.module.css';
 
-export default function Top(){
+export default function Top({allMenus}){
 
     let articleMenuItems = [
         {name: 'algo1', router: 'algo1'},
@@ -15,7 +15,7 @@ export default function Top(){
             <div className='top'>
                 <div className='menuTop'> 
                     <Menu 
-                        articleMenuItems= {articleMenuItems}
+                        articleMenuItems= {allMenus}
                     />
                 </div>
                 <Logo />
