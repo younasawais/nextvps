@@ -1,13 +1,11 @@
 import { Nav, Navbar } from 'react-bootstrap';
-//import Logo from './Logo.js';
-import styling from './menu.module.css';
 import { Fragment } from 'react';
 
 export default function Menu({articleMenuItems}) {
   return (
     <Fragment>
         {/* <Logo /> */}
-        <Navbar bg="transparant" expand="lg" className={styling.navbar}>
+        <Navbar bg="transparant" expand="lg" className='navebar'>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" >
                     <div className="test">
@@ -22,6 +20,10 @@ export default function Menu({articleMenuItems}) {
                 </Navbar.Collapse>
         </Navbar>
         <style jsx>{`
+            .navbar{
+                display: flex;
+                justify-content: space-between;
+            }
             @media (min-Width: 991px){
                 .test{
                     overflow-y: scroll;
