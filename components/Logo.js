@@ -14,6 +14,7 @@ export default function Logo(){
                     h2{
                         font-size: 1.1rem;
                         text-shadow: 3px 3px 5px #7183b5;
+                        margin-top:10px
                     }
                     a:hover{
                         text-decoration: none;

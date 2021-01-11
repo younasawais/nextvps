@@ -37,6 +37,7 @@ export default function Home() {
                   margin: 4px;
                 }
                 h2{
+                    margin-top: 15px;
                     font-size: 1.6rem;
                     text-shadow: 3px 3px 5px #7183b5;
                     font-family: 'Audiowide';

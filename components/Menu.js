@@ -20,6 +20,9 @@ export default function Menu({articleMenuItems}) {
                 </Navbar.Collapse>
         </Navbar>
         <style jsx>{`
+            .navebar{
+                padding: 0   
+            }
             .navbar{
                 display: flex;
                 justify-content: space-between;
