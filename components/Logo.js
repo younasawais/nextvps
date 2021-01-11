@@ -6,8 +6,7 @@ export default function Logo(){
                 <div className="menu-logo">
                     <div className="navbar-brand">
                         <a href="/">
-                            <h2 className='logoName'>
-                                THE JAVA DEVELOPER</h2>
+                            <h2 className='logoName'> THE JAVA DEVELOPER</h2>
                         </a>
                     </div>
                 </div>
