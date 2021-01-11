@@ -1,5 +1,4 @@
 import Menu from './Menu';
-//import styles from './checkthis.module.css';
 
 export default function Top({allMenus}){
 
