@@ -1,5 +1,4 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
-
 import { GA_TRACKING_ID } from '../lib/gtag';
 
 class MyDocument extends Document {
@@ -12,7 +11,6 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-            {/* <link href="/fonts/style.css" rel="stylesheet"/>*/}
             <script 
               data-ad-client="ca-pub-1428354267201878" 
               async 

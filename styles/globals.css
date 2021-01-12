@@ -30,3 +30,24 @@ body{
     from {opacity: 0;}
     to {opacity: 1;}
   }
+
+  /******* Scroll Bard *****/
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #41618b; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(165, 214, 241); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(163, 191, 207); 
+}

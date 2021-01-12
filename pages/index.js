@@ -3,6 +3,7 @@ import {allMenus} from './data.json'
 import Link from 'next/link'
 import Bottom from '../components/Bottom'
 
+
 export default function Home() {
   return (
     <Fragment>

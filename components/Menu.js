@@ -4,7 +4,6 @@ import { Fragment } from 'react';
 export default function Menu({articleMenuItems}) {
   return (
     <Fragment>
-        {/* <Logo /> */}
         <Navbar bg="transparant" expand="lg" className='navebar'>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" >
@@ -26,6 +25,7 @@ export default function Menu({articleMenuItems}) {
             .navbar{
                 display: flex;
                 justify-content: space-between;
+                padding: 0;
             }
             @media (min-Width: 991px){
                 .test{

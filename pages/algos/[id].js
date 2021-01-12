@@ -4,6 +4,7 @@ import {Fragment} from 'react';
 import Bottom from '../../components/Bottom';
 import {allPages, allMenus} from '../data.json';
 import Logo from '../../components/Logo';
+import Head from 'next/head';
 
 Algos.getInitialProps = async ({query}) => { 
     const { id } = query;
@@ -47,6 +48,9 @@ Algos.getInitialProps = async ({query}) => {
 export default function Algos({algoDetails, family, extraFamily, allMenus, notFound}){  
     return (
         <Fragment>
+            <Head>
+                <title>{algoDetails.name}</title>
+            </Head>
             {
                 (!notFound) ? 
                 <div className='center'>
